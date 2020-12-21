@@ -10,6 +10,8 @@ RUN wget https://files.phpmyadmin.net/phpMyAdmin/4.9.0.1/phpMyAdmin-4.9.0.1-all-
 RUN wget https://fr.wordpress.org/latest-fr_FR.tar.gz
 RUN apt install -y php-curl php-gd php-intl php-mbstring php-soap php-xml php-xmlrpc php-zip
 
+ENV auto_index=on
+
 COPY ./srcs/default ./tmp
 COPY ./srcs/initdb.sql ./tmp
 COPY ./srcs/config.inc.php ./tmp

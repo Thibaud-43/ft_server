@@ -2,8 +2,9 @@
 mkdir /var/www/localhost
 service mysql start
 #NGINX
-
-mv ./tmp/default etc/nginx/sites-available/default
+envsubst '${auto_index}' < ./tmp/default > ./tmp/default_with_index
+rm 
+mv ./tmp/default_with_index etc/nginx/sites-available/default
 
 # MySQL
 
