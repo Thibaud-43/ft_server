@@ -20,7 +20,9 @@ mv ./tmp/config.inc.php ./var/www/localhost/phpMyAdmin
 
 tar -zxvf latest-fr_FR.tar.gz
 mv wordpress/ ./var/www/localhost/wordpress/
-cp ./tmp/wp-config.php /var/www/localhost/wordpress/.
+cp ./tmp/wp-config.php /var/www/localhost/wordpress/
+cp -a /var/www/localhost/wordpress/. /var/www/localhost/
+rm -rf /var/www/localhost/wordpress/
 
 # clef ssl
 mkdir /etc/nginx/ssl
